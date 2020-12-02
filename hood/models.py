@@ -34,13 +34,13 @@ class Profile (models.Model):
         self.delete()
         
 class Business(models.Model):
-    businessName = models.CharField(max_length=250)
+    business_name = models.CharField(max_length=250)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     neighbourhood = models.ForeignKey(Neighbourhood,on_delete=models.CASCADE)
-    businessEmail = models.CharField(max_length=30)
+    business_email = models.CharField(max_length=30)
     
     def __str__(self):
-        return f'{self.businessName} business'
+        return f'{self.business_name} business'
     
     def save_business(self):
         self.save()
