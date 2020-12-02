@@ -34,3 +34,10 @@ class BusinessViewSet(viewsets.ModelViewSet):
     """
     serializer_class = BusinessSerializer
     queryset = Business.objects.all()
+
+class PostViewSet(viewsets.ModelViewSet):
+    """
+    A viewset for viewing and editing profile instances.
+    """
+    serializer_class = PostSerializer
+    queryset = Post.objects.all()

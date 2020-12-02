@@ -2,7 +2,7 @@
 from rest_framework.routers import DefaultRouter
 from django.urls import path,re_path,include
 
-from .views import home, NeighbourhoodViewSet,ProfileViewSet,BusinessViewSet
+from .views import home, NeighbourhoodViewSet,ProfileViewSet,BusinessViewSet,PostViewSet
 
 # snippet_list = NeighbourhoodViewSet.as_view({
 #     'get': 'list',
@@ -24,14 +24,17 @@ from .views import home, NeighbourhoodViewSet,ProfileViewSet,BusinessViewSet
 router = DefaultRouter()
 router2 = DefaultRouter()
 router3 = DefaultRouter()
+router1 = DefaultRouter()
 router.register(r'Neighborhood', NeighbourhoodViewSet)
 router2.register(r'Profile', ProfileViewSet)
 router3.register(r'Business', BusinessViewSet)
+router1.register(r'Post', PostViewSet)
 
 urlpatterns =[
     path("", include(router.urls) ),
     path("profile/", include(router2.urls) ),
-    path("business/", include(router3.urls) )
+    path("business/", include(router3.urls) ),
+    path("post/", include(router1.urls) ),
 ] 
 
 # + router.urls
