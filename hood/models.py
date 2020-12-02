@@ -1,5 +1,8 @@
 from django.db import models
 from django.contrib.auth.models import User
+import cloudinary
+from cloudinary.models import CloudinaryField
+from tinymce.models import HTMLField
 # Create your models here.
 class Neighbourhood(models.Model):
     name = models.CharField(max_length=250)
@@ -21,7 +24,7 @@ class Profile (models.Model):
     neighbourhood = models.ForeignKey(Neighbourhood,on_delete=models.CASCADE)
     email = models.CharField(max_length=50)
     status = models.BooleanField()
-    image = models.ImageField(upload_to = 'profile',default = 'profile.jpg')
+    image = models.ImageField('profile pic',default = 'profile.jpg')
     
     def __str__(self):
         return f'{self.user.username} Profile'
