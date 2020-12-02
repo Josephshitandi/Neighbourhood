@@ -20,3 +20,10 @@ class NeighbourhoodViewSet(viewsets.ModelViewSet):
     """
     serializer_class = NeighbourhoodSerializer
     queryset = Neighbourhood.objects.all()
+    
+class ProfileViewSet(viewsets.ModelViewSet):
+    """
+    A viewset for viewing and editing user instances.
+    """
+    serializer_class = ProfileSerializer
+    queryset = Profile.objects.all()
