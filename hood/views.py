@@ -9,9 +9,9 @@ def home(request):
     hood = Neighbourhood.objects.all()
     business = Business.objects.all()
     posts = Post.objects.all()
-    print("Results..", posts)
-      
-    return render(request, "home.html", {"hoods":hood, "business":business,"posts":posts})
+    # print("Results..", posts)
+    heading = "Welcome to Neighborhood application"
+    return render(request, "home.html", {"hoods":hood, "business":business,"posts":posts, "heading":heading})
 class NeighbourhoodViewSet(viewsets.ModelViewSet):
     """
     A viewset for viewing and editing neighborhood instances.

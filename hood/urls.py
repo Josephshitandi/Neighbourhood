@@ -1,7 +1,7 @@
 
 from rest_framework.routers import DefaultRouter
 from django.urls import path,re_path,include
-
+from . import views
 from .views import home, NeighbourhoodViewSet,ProfileViewSet,BusinessViewSet,PostViewSet
 
 
@@ -13,7 +13,8 @@ router.register(r'Business', BusinessViewSet)
 router.register(r'Post', PostViewSet)
 
 urlpatterns =[
-    path("", include(router.urls) )
+    path("", include(router.urls) ),
+    path('home/', views.home, name = 'index'),
 ] 
 
 
