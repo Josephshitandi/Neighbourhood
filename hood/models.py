@@ -21,7 +21,7 @@ class Neighbourhood(models.Model):
         
 class Profile (models.Model):
     name = models.CharField(max_length=30)
-    neighbourhood = models.ForeignKey(Neighbourhood,on_delete=models.CASCADE)
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     email = models.CharField(max_length=50)
     status = models.BooleanField()
     image = models.ImageField('profile pic',default = 'profile.jpg')

@@ -10,7 +10,7 @@ class NeighbourhoodSerializer(serializers.ModelSerializer):
 class ProfileSerializer(serializers.ModelSerializer):
     class Meta:
         model = Profile
-        fields = ('id', 'name', 'email', 'status', 'image','neighbourhood')
+        fields = ('id', 'name', 'email', 'status', 'image','user')
         
 class BusinessSerializer(serializers.ModelSerializer):
     class Meta:
