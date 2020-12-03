@@ -5,7 +5,7 @@ from .serializer import NeighbourhoodSerializer
 from rest_framework import status
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from rest_framework import viewsets
-from .models import Neighborhood
+from .models import Neighbourhood
 # Create your views here.
 
 

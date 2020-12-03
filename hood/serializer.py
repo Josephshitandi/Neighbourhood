@@ -5,5 +5,5 @@ from .models import Neighbourhood
 class NeighbourhoodSerializer(serializers.ModelSerializer):
     class Meta:
         model = Neighbourhood
-        # fields = ('neighbourhood_name','location','occupants')
-        fields = __All__
+        fields = ('neighbourhood_name','location','occupants')
+        
