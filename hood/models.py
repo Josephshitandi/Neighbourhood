@@ -51,7 +51,7 @@ class Business(models.Model):
 class Post(models.Model):
     title = models.CharField(max_length=100)
     text = models.TextField()
-    user = models.ForeignKey(User,on_delete=models.CASCADE,default = '')
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=True)
     neighbourhood = models.ForeignKey(Neighbourhood,on_delete=models.CASCADE, default='', null=True, blank=True)
    

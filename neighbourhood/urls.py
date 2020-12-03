@@ -28,6 +28,6 @@ urlpatterns = [
     path('api-token-auth/', obtain_auth_token)
 ]
 
-admin.site.index_title="The Neighborhood"
-admin.site.site_header="The Neighborhood Admin"
-admin.site.site_title="The Neighborhood"
+admin.site.index_title="Neighborhood"
+admin.site.site_header="Neighborhood Admin"
+admin.site.site_title="Neighborhood"
