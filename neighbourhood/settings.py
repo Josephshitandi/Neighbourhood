@@ -53,6 +53,8 @@ INSTALLED_APPS = [
     'bootstrap3',
 ]
 
+AUTH_USER_MODEL = 'hood.User'
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
