@@ -5,6 +5,8 @@ from .models import *
 from .serializer import *
 from rest_framework import status
 
+
+
 def home(request):
     hood = Neighbourhood.objects.all()
     business = Business.objects.all()
