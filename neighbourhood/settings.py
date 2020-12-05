@@ -52,6 +52,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'bootstrap3',
+    'knox'
     
 ]
 
@@ -230,6 +231,7 @@ MEDIA_URL = '/media/'
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework.authentication.TokenAuthentication',
+        'knox.auth.TokenAuthentication',
     )
 }
 

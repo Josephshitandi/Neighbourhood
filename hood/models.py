@@ -4,6 +4,8 @@ from django.db import models
 import cloudinary
 from cloudinary.models import CloudinaryField
 from tinymce.models import HTMLField
+
+
 # Create your models here.
 
 from django.core.mail import send_mail
@@ -52,7 +54,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     date_joined = models.DateTimeField(_('date joined'), auto_now_add=True)
     is_active = models.BooleanField(_('active'), default=True)
     is_staff = models.BooleanField( default=False)
-    avatar = models.ImageField(upload_to='avatars/', null=True, blank=True)
+    avatar = CloudinaryField('avatar', null=True, blank=True)
 
     objects = UserManager()
 
@@ -87,6 +89,7 @@ class Neighbourhood(models.Model):
     name = models.CharField(max_length=250)
     location = models.CharField(max_length=250)
     occupantsCount = models.IntegerField(default=0)
+    image = CloudinaryField('Profile pic', null=True, blank=True)
     admin = models.ForeignKey(User,on_delete=models.CASCADE)
     
     def __str__(self):
@@ -103,7 +106,7 @@ class Profile (models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     email = models.CharField(max_length=50)
     status = models.BooleanField()
-    image = models.ImageField('profile pic',default = 'profile.jpg')
+    image = CloudinaryField('Profile pic', default = 'profile.jpg')
     
     def __str__(self):
         return f'{self.user.username} Profile'
@@ -115,6 +118,7 @@ class Profile (models.Model):
 class Business(models.Model):
     business_name = models.CharField(max_length=250)
     user = models.ForeignKey(User,on_delete=models.CASCADE)
+    business_profile = CloudinaryField('Profile pic', null=True, blank=True)
     neighbourhood = models.ForeignKey(Neighbourhood,on_delete=models.CASCADE)
     business_email = models.CharField(max_length=30)
     
@@ -129,6 +133,7 @@ class Business(models.Model):
         
 class Post(models.Model):
     title = models.CharField(max_length=100)
+    image = CloudinaryField('image', null=True, blank=True)
     text = models.TextField()
     user = models.ForeignKey(User,on_delete=models.CASCADE)
     date = models.DateField(auto_now_add=True)
